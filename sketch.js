@@ -5,6 +5,8 @@ let inputBox;
 
 function preload() {
   table = loadTable("HW2---text-csv/texts.csv", "csv");
+  console.log(table);
+  console.log(table.columns);
 }
 
 function setup() {
@@ -28,7 +30,7 @@ async function submitText() {
   if (inputText != 0 && inputText != "Write your anxious thoughts here") {
     console.log("Text Submitted : " + inputText); // log text on console
 
-    console.log(table);
+    console.log(table.columns);
 
     let newRow = table.addRow();
     let newRowIndex = table.getRowCount() - 1;
