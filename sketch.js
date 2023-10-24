@@ -28,11 +28,12 @@ async function submitText() {
   if (inputText != 0 && inputText != "Write your anxious thoughts here") {
     console.log("Text Submitted : " + inputText); // log text on console
 
+    console.log(table);
+    console.log(inputText);
+
     let newRow = table.addRow();
     let newRowIndex = table.getRowCount() - 1;
-    newRow.setString(inputText);
-
-    console.log(table);
+    newRow.setString(null, inputText);
 
     inputBox.value('Write your anxious thoughts here'); // reset input field
   } else {
