@@ -4,7 +4,7 @@ let inputButton;
 let inputBox;
 
 function preload() {
-  table = loadTable("/texts.csv", "csv");
+  table = loadTable("HW2---text-csv/texts.csv", "csv");
 }
 
 function setup() {
