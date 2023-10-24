@@ -1,7 +1,11 @@
-
+let table;
 
 let inputButton;
 let inputBox;
+
+function preload() {
+  table = loadTable("/texts.csv", "csv");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -19,11 +23,18 @@ function setup() {
 
 // Get user input and send it to the ai
 async function submitText() {
-  // Check if text is present, and if so submit. If not then send error to console  
-  if (text != 0) {
-    console.log("Text Submitted : " + inputBox.value()); // log text on console
+  // Check if text is present, and if so submit. If not then send error to console 
+  inputText = inputBox.value(); 
+  if (inputText != 0 && inputText != "Write your anxious thoughts here") {
+    console.log("Text Submitted : " + inputText); // log text on console
 
-    
+    console.log(table);
+
+    let newRow = table.addRow();
+    let newRowIndex = table.getRowCount() - 1;
+    newRow.setString(inputText);
+
+    console.log(table);
 
     inputBox.value('Write your anxious thoughts here'); // reset input field
   } else {
